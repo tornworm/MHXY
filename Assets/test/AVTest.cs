@@ -13,12 +13,12 @@ public class AVTest : MonoBehaviour {
     private string id;
 	
 	void Start () {
-       // XX();
+        XX();
         
     }
     private void XX()
     {
-        var equip = new AVObject("GameEquip");//在服务器的GameEquip表新建一行
+        var equip = new AVObject("ddd");//在服务器的GameEquip表新建一行
         equip["name"] = "短剑";//这一行的第二列为name列，值为短剑
         equip["attackValue"] = 5;
      
@@ -29,9 +29,10 @@ public class AVTest : MonoBehaviour {
             {
                 Debug.Log("存储装备成功:" + equip.ObjectId);
                 id = equip.ObjectId;
-                TestQueryAVObject();
+               
             }
         );
+       
 
     
     }

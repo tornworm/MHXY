@@ -54,7 +54,7 @@ public class EventController : MonoBehaviour
             {
 
                 Listener.OnEventTrigger(Current);
-                Debug.Log(2222);
+
             }
         }
     }

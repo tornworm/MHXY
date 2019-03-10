@@ -47,7 +47,7 @@ public class UI_Capacity : BaseWindows {
         row = Random.Range(2, 100);
         content = ExcelEPP.Singeton.GetCapacity(row, 3);
         level = ExcelEPP.Singeton.GetCapacity(row, 2);
-        Debug.Log(row);
+
         levelImageID = int.Parse(ExcelEPP.Singeton.GetCapacity(row, 4));
         synchronousShow();
         SendE();
@@ -55,7 +55,7 @@ public class UI_Capacity : BaseWindows {
     }
     void confirm()//确认按钮
     {
-        Debug.Log(name);
+      
         UITools.Singeton.CloseSelf(name);
     }
     void cancel()//取消按钮

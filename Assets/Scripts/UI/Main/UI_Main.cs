@@ -10,7 +10,7 @@ using UnityEngine.UI;
 
 
 
-public class UI_Main : MonoBehaviour, IEventListener
+public class UI_Main : BaseWindows
 {
     private Text capacityText;
     
@@ -24,7 +24,7 @@ public class UI_Main : MonoBehaviour, IEventListener
     }
 
 
-    public void OnEventTrigger(Event e)
+    public override void OnEventTrigger(Event e)
     {
         if (e.EventID == 1111)
         {

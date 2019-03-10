@@ -10,7 +10,7 @@ using UnityEngine.EventSystems;
 
 
 
-public class BaseWindows : MonoBehaviour,IPointerClickHandler
+public class BaseWindows : MonoBehaviour,IPointerClickHandler, IEventListener
 {
     public virtual void Init()
     {
@@ -31,7 +31,14 @@ public class BaseWindows : MonoBehaviour,IPointerClickHandler
 
     public virtual void OnPointerClick(PointerEventData e)
     {
-        Debug.Log("1111");
+
     }
+
+    public virtual void OnEventTrigger(Event _Event)
+    {
+       
+    }
+
+  
 }
   
