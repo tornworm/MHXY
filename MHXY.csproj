@@ -282,8 +282,8 @@
     <Compile Include="Assets\Scripts\Tools\ExcelEPP.cs" />
     <Compile Include="Assets\Scripts\Tools\UITools.cs" />
     <Compile Include="Assets\Scripts\UI\Capacity\UI_Capacity.cs" />
+    <Compile Include="Assets\Scripts\UI\CharacterProperty\UI_CharacterProperty.cs" />
     <Compile Include="Assets\Scripts\UI\Common\UI_TextBox.cs" />
-    <Compile Include="Assets\Scripts\UI\Main\UI_Main.cs" />
     <Compile Include="Assets\Scripts\UI\Pet\UI_PetSkillChoose.cs" />
     <Compile Include="Assets\Scripts\UI\Start\UI_StartMain.cs" />
     <Compile Include="Assets\test\AVInit.cs" />

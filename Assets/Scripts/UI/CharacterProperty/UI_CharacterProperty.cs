@@ -10,7 +10,7 @@ using UnityEngine.UI;
 
 
 
-public class UI_Main : BaseWindows
+public class UI_CharacterProperty : BaseWindows
 {
     private Text capacityText;
     
