@@ -293,7 +293,9 @@
     <Compile Include="Assets\test\open.cs" />
     <Compile Include="Assets\test\sss.cs" />
     <Compile Include="Assets\test\UI_ClickTest.cs" />
+    <Compile Include="Assets\testsss.cs" />
     <Compile Include="Assets\UI_Common1.cs" />
+    <Compile Include="Assets\UI_Main.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Plugins\link.xml" />
