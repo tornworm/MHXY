@@ -10,7 +10,7 @@ using UnityEngine.UI;
 
 
 
-public class UI_Common1 : BaseWindows {
+public class UI_Character : BaseWindows {
 
     private Text title = null;//标题文本
     private Button backBtn = null;//返回
@@ -36,8 +36,7 @@ public class UI_Common1 : BaseWindows {
     List<GameObject> tabImg = new List<GameObject>();
     List<GameObject> panel = new List<GameObject>();
 
-    private void Start()
-    {
+    private void Start() {
         title = transform.Find("bg/title/Text").GetComponent<Text>();
         backBtn = transform.Find("bg/back").GetComponent<Button>();
 
@@ -75,40 +74,27 @@ public class UI_Common1 : BaseWindows {
 
         SetTab(0);
     }
-    public override void OnPointerClick(PointerEventData e)
-    {
-    
-    
-        if (e.pointerEnter.name == "tab1")
-        {
+    public override void OnPointerClick(PointerEventData e) {
+
+
+        if (e.pointerEnter.name == "tab1") {
             SetTab(0);
-        }
-        else if (e.pointerEnter.name == "tab2")
-        {
+        } else if (e.pointerEnter.name == "tab2") {
             SetTab(1);
-        }
-        else if (e.pointerEnter.name == "tab3")
-        {
+        } else if (e.pointerEnter.name == "tab3") {
             SetTab(2);
-        }
-        else if (e.pointerEnter.name == "tab4")
-        {
+        } else if (e.pointerEnter.name == "tab4") {
             SetTab(3);
         }
     }
-    private void SetTab(int id)
-    {
-        for (int i = 0; i < 4; i++)
-        {
-            
-            if (i == id)
-            {
-    
+    private void SetTab(int id) {
+        for (int i = 0; i < 4; i++) {
+
+            if (i == id) {
+
                 tabImg[i].SetActive(true);
                 panel[i].SetActive(true);
-            }
-            else
-            {
+            } else {
                 tabImg[i].SetActive(false);
                 panel[i].SetActive(false);
 
