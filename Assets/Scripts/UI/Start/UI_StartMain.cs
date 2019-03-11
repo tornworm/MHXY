@@ -19,6 +19,9 @@ public class UI_StartMain : MonoBehaviour {
     public void aa()
     {
         SceneManager.LoadScene("Loading");
+
+
+
     }
 	
 	
