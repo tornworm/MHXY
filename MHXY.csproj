@@ -282,9 +282,13 @@
     <Compile Include="Assets\Scripts\Tools\ExcelEPP.cs" />
     <Compile Include="Assets\Scripts\Tools\UITools.cs" />
     <Compile Include="Assets\Scripts\UI\Capacity\UI_Capacity.cs" />
+    <Compile Include="Assets\Scripts\UI\Character\UI_Character.cs" />
+    <Compile Include="Assets\Scripts\UI\Character\UI_CharacterPanel1.cs" />
     <Compile Include="Assets\Scripts\UI\CharacterProperty\UI_CharacterProperty.cs" />
+    <Compile Include="Assets\Scripts\UI\Common\UI_Common1.cs" />
     <Compile Include="Assets\Scripts\UI\Common\UI_TextBox.cs" />
     <Compile Include="Assets\Scripts\UI\Pet\UI_PetSkillChoose.cs" />
+    <Compile Include="Assets\Scripts\UI\Start\StartRoot.cs" />
     <Compile Include="Assets\Scripts\UI\Start\UI_StartMain.cs" />
     <Compile Include="Assets\test\AVInit.cs" />
     <Compile Include="Assets\test\AVTest.cs" />
@@ -293,14 +297,11 @@
     <Compile Include="Assets\test\open.cs" />
     <Compile Include="Assets\test\sss.cs" />
     <Compile Include="Assets\test\UI_ClickTest.cs" />
-    <Compile Include="Assets\testsss.cs" />
-    <Compile Include="Assets\UI_Common1.cs" />
     <Compile Include="Assets\UI_Main.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Plugins\link.xml" />
     <None Include="Assets\StreamingAssets\Data_test.txt" />
-    <None Include="Assets\test.txt" />
     <None Include="Assets\test\Data_Task.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
