@@ -12,6 +12,9 @@ using UnityEngine.EventSystems;
 
 public class BaseWindows : MonoBehaviour,IPointerClickHandler, IEventListener
 {
+
+ 
+
     public virtual void Init()
     {
 

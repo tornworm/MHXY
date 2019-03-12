@@ -332,7 +332,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Plugins\link.xml" />
-    <None Include="Assets\StreamingAssets\Data_test.txt" />
     <None Include="Assets\test\Data_Task.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

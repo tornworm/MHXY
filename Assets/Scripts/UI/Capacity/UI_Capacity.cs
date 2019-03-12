@@ -12,6 +12,9 @@ using OfficeOpenXml;
 
 public class UI_Capacity : BaseWindows {
 
+    
+
+
     private Button randomBtn;//骰子按钮
     private Button LBtn;//左按钮
     private Button RBtn;//右按钮

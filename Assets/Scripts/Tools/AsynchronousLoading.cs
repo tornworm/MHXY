@@ -64,4 +64,8 @@ public class AsynchronousLoading : MonoBehaviour
             async.allowSceneActivation = true;
         }
     }
+    private void OnDestroy()
+    {
+        StopCoroutine(loadScene());
+    }
 }
