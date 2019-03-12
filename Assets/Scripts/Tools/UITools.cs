@@ -128,7 +128,7 @@ public class UITools {
             image.sprite = sprites[i];
             if (i == sprites.Length-1)
                 i = -1;
-            yield return OnceTime;
+            yield return new WaitForSeconds(OnceTime);
         }
         yield return null;
     
