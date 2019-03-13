@@ -7,9 +7,6 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-
-
-
 public class UI_Bag : BaseWindows
 {
 
@@ -72,14 +69,16 @@ public class UI_Bag : BaseWindows
         panel.Add ( panel2 );
         //panel.Add ( panel3 );
         //panel.Add ( panel4 );
-
+        
+        //给各个面板添加脚本
+        AddComToPanel();
 
         SetTab ( 0 );
     }
     public override void OnPointerClick ( PointerEventData e )
     {
 
-        Debug.Log ( e.pointerEnter.name );
+        //Debug.Log ( e.pointerEnter.name );
         if ( e.pointerEnter.name == "tab1" )
         {
             SetTab ( 0 );
@@ -117,14 +116,11 @@ public class UI_Bag : BaseWindows
         }
     }
 
-    //给物体加脚本T方法
-    void AddComToPanel(GameObject go,BaseWindows component)
+    //给子面板添加脚本方法
+    void AddComToPanel( )
     {       
-        //非空校验
-        if ( go!=null )
-        {
-            //go.AddComponent<component> ( );
-        }
+       panel1.AddComponent<UI_BagPanelOne>();
+       panel2.AddComponent<UI_BagPanelTwo> ( );
     }
 
 }
