@@ -20,6 +20,7 @@ public class StartRoot : MonoBehaviour {
         Video = transform.Find("opening").gameObject;
 
         videoPlayer= Video.GetComponent<VideoPlayer>();
+       
 	}
     private void Update()
     {
