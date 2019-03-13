@@ -101,14 +101,17 @@ public class UI_StartMainCommitPanel : BaseWindows {
           
             UITools.Singeton.CreatHintBox("验证码错误!");
             gameObject.SetActive(false);
-            transform.parent.Find("ChoosePanel").gameObject.SetActive(true);
+            transform.parent.Find("SignInPanel").gameObject.SetActive(true);
             return;
         }
         else
         {
             UITools.Singeton.CreatHintBox("注册成功!");
             gameObject.SetActive(false);
-            StartMainManager.Singeton.SignUp();
+            //  StartMainManager.Singeton.SignUp();
+            transform.parent.Find("StartBtn").gameObject.SetActive(true);
+            transform.parent.Find("chooseServer").gameObject.SetActive(true);
+
         }
     }
 }

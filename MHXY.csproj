@@ -299,6 +299,10 @@
     <Compile Include="Assets\Scripts\Tools\AsynchronousLoading.cs" />
     <Compile Include="Assets\Scripts\Tools\ExcelEPP.cs" />
     <Compile Include="Assets\Scripts\Tools\UITools.cs" />
+    <Compile Include="Assets\Scripts\UI\Bag\UI_Bag.cs" />
+    <Compile Include="Assets\Scripts\UI\Bag\UI_BagFrameAnim.cs" />
+    <Compile Include="Assets\Scripts\UI\Bag\UI_BagPanelOne.cs" />
+    <Compile Include="Assets\Scripts\UI\Bag\UI_BagPanelTwo.cs" />
     <Compile Include="Assets\Scripts\UI\Capacity\UI_Capacity.cs" />
     <Compile Include="Assets\Scripts\UI\Character\UI_Character.cs" />
     <Compile Include="Assets\Scripts\UI\Character\UI_CharacterPanel1.cs" />
