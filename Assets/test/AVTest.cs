@@ -13,10 +13,10 @@ public class AVTest : MonoBehaviour {
     private string id;
 	
 	void Start () {
-        XX();
+       
         
     }
-    private void XX()
+    void SignUp(string roleID)
     {
         var equip = new AVObject("ddd");//在服务器的GameEquip表新建一行
         equip["name"] = "短剑";//这一行的第二列为name列，值为短剑
@@ -36,7 +36,7 @@ public class AVTest : MonoBehaviour {
 
     
     }
-    void TestQueryAVObject()
+    void SignIn()
     {
         AVQuery<AVObject> query = new AVQuery<AVObject>("GameEquip");
         query.GetAsync(id).ContinueWith(
