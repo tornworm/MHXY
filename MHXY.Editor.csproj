@@ -281,6 +281,9 @@
     <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
       <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/15.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
+    <Reference Include="TexturePackerImporter">
+      <HintPath>Assets/codeandweb.com/Editor/TexturePackerImporter.dll</HintPath>
+    </Reference>
     <Reference Include="AssemblyLister">
       <HintPath>Assets/Plugins/AssemblyLister.dll</HintPath>
     </Reference>
@@ -346,10 +349,13 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Editor\AtlaPack\AtlasPackerEditor.cs" />
     <Compile Include="Assets\Editor\UICreate.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Plugins\link.xml" />
+    <None Include="Assets\codeandweb.com\Editor\SettingsTexturePackerImporter.txt" />
+    <None Include="Assets\codeandweb.com\Readme.txt" />
     <None Include="Assets\test\Data_Task.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
