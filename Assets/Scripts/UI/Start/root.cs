@@ -13,7 +13,7 @@ public class root : MonoBehaviour {
 
 	
 	void Start () {
-        DontDestroyOnLoad(this);
+		DontDestroyOnLoad(this.gameObject);
     }
 	
 	

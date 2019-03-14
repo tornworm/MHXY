@@ -13,10 +13,10 @@ public class UI_PetSkillChoose : MonoBehaviour {
 
 
 
-    private GameObject ScrollView;//选择技能书滑动区域
-    private GameObject Cell;//技能树基类Prefab
-    private List<GameObject> CellList = new List<GameObject>();//技能书Prefab列表
-    private List<int> SkillList = new List<int>();//技能书列表
+    public GameObject ScrollView;//选择技能书滑动区域
+    public GameObject Cell;//技能树基类Prefab
+    public List<GameObject> CellList = new List<GameObject>();//技能书Prefab列表
+    public List<int> SkillList = new List<int>();//技能书列表
 
 	void Start () {
 
@@ -27,7 +27,7 @@ public class UI_PetSkillChoose : MonoBehaviour {
 
     }
 
-    private void CloneCell()//克隆当前拥有的技能书
+    public void CloneCell()//克隆当前拥有的技能书
     {
         for (int i = 0; i < 30; i++)
         {
