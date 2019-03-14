@@ -299,6 +299,13 @@
     <Compile Include="Assets\Scripts\Tools\AsynchronousLoading.cs" />
     <Compile Include="Assets\Scripts\Tools\ExcelEPP.cs" />
     <Compile Include="Assets\Scripts\Tools\UITools.cs" />
+    <Compile Include="Assets\Scripts\UI\Bag\GoodBase.cs" />
+    <Compile Include="Assets\Scripts\UI\Bag\GoodEnum.cs" />
+    <Compile Include="Assets\Scripts\UI\Bag\UI_Bag.cs" />
+    <Compile Include="Assets\Scripts\UI\Bag\UI_BagFrameAnim.cs" />
+    <Compile Include="Assets\Scripts\UI\Bag\UI_BagPanelOne.cs" />
+    <Compile Include="Assets\Scripts\UI\Bag\UI_BagPanelTwo.cs" />
+    <Compile Include="Assets\Scripts\UI\Bag\UI_BagScrollContentItem.cs" />
     <Compile Include="Assets\Scripts\UI\Capacity\UI_Capacity.cs" />
     <Compile Include="Assets\Scripts\UI\Character\UI_Character.cs" />
     <Compile Include="Assets\Scripts\UI\Character\UI_CharacterPanel1.cs" />
@@ -319,6 +326,13 @@
     <Compile Include="Assets\Scripts\UI\Start\UI_StartMainCommitPanel.cs" />
     <Compile Include="Assets\Scripts\UI\Start\UI_StartMainSignUpPanel.cs" />
     <Compile Include="Assets\Scripts\UI\Welfare\UI_Welfare.cs" />
+    <Compile Include="Assets\Scripts\UI\Welfare\UI_WelfarePanel1.cs" />
+    <Compile Include="Assets\Scripts\UI\Welfare\UI_WelfarePanel1Cell.cs" />
+    <Compile Include="Assets\Scripts\UI\Welfare\UI_WelfarePanel3.cs" />
+    <Compile Include="Assets\Scripts\UI\Welfare\UI_WelfarePanel3Cell.cs" />
+    <Compile Include="Assets\Scripts\UI\Welfare\UI_WelfarePanel5.cs" />
+    <Compile Include="Assets\Scripts\UI\Welfare\UI_WelfarePanel5Cell.cs" />
+    <Compile Include="Assets\Scripts\UI\Welfare\WelfareManager.cs" />
     <Compile Include="Assets\test\AVInit.cs" />
     <Compile Include="Assets\test\AVTest.cs" />
     <Compile Include="Assets\test\GameController.cs" />

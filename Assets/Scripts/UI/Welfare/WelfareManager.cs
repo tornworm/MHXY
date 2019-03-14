@@ -18,6 +18,14 @@ public class WelfareManager : MonoBehaviour {
     }
     private WelfareManager() { }
 
+    //Panel1里面的Cell数量
     public int Panel1Count = 7;
+
+    //Panel3里面的Cell数量
+    public int Panel3Count = 6;
+
+    //Panel5里面的Cell数量
+    public int Panel5Count = 12;
+
 
 }
