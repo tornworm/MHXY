@@ -30,13 +30,12 @@ public class EquipManager : MonoBehaviour
             for ( int j = 1 ; j <=15 ; j++ )
             {
                 //分别赋值
-                equip.Type = GoodType.ST_EQUIP;//物品类型为装备
-                equip.CanTrade = true;//可交易
-                equip.CanUse = true;//可使用
+                equip.CanTrade = 1;//可交易
+                equip.CanUse = 1;//可使用
                 //赋值ID
                 if (j==1)
                 {
-                     equip.ID=int.Parse(BagExcelData.Singeton.GetWord(i,j));
+                     equip.GoodID=int.Parse(BagExcelData.Singeton.GetWord(i,j));
                      continue;
                 }
                 //赋值装备类型
@@ -104,7 +103,7 @@ public class EquipManager : MonoBehaviour
                 //赋值装备的星级
                 if ( j==7 )
                 {
-                    equip.StartLevel=int.Parse(BagExcelData.Singeton.GetWord(i,j));
+                    //equip.StartLevel=int.Parse(BagExcelData.Singeton.GetWord(i,j));
                     continue;
                 }
                 //赋值装备的攻击属性加成
@@ -143,7 +142,7 @@ public class EquipManager : MonoBehaviour
                     equip.Description=BagExcelData.Singeton.GetWord(i,j);                    
                 }                
                 //将装备添加到字典中
-               equipDict.Add(equip.ID,equip);                
+               equipDict.Add(equip.GoodID,equip);                
 
             }
         }

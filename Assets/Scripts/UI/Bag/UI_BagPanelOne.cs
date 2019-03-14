@@ -213,7 +213,7 @@ public class UI_BagPanelOne : BaseWindows
     
 
     //往一个背包中添加物品
-    public void ScrollAddGood ( List<GameObject> _list , GoodBase _good , int _count = 1 )
+    public void ScrollAddGood ( List<GameObject> _list , Good _good , int _count = 1 )
     {
         //物品非空校验
         if ( _good != null && _count > 0 )
@@ -222,7 +222,7 @@ public class UI_BagPanelOne : BaseWindows
             for ( int i = 0 ; i < _list.Count ; i++ )
             {
                 UI_BagScrollContentItem item = _list[ i ].GetComponent<UI_BagScrollContentItem> ( );
-                if ( item.good.ID == _good.ID )
+                if ( item.good.GoodID == _good.GoodID )
                 {
                     item.SetGood ( _good , ( item.goodCount + _count ) );
                     //结束方法
@@ -304,7 +304,7 @@ public class UI_BagPanelOne : BaseWindows
         }
     }
     //使用背包中的物品
-    public void ScrollUseGood ( List<GameObject> _list , GoodBase _good , int _count = 1 )
+    public void ScrollUseGood ( List<GameObject> _list , Good _good , int _count = 1 )
     {
         //先判断_good是否为空
         if ( _good!=null )
@@ -317,7 +317,7 @@ public class UI_BagPanelOne : BaseWindows
                 if ( !item.isNone )
                 {
                     //格子里已经有物品了,判断格子是否相等
-                    if ( item.good.ID==_good.ID )
+                    if ( item.good.GoodID==_good.GoodID )
                     {
                         item.UseGood(_count);//使用物品
                         return;//结束方法

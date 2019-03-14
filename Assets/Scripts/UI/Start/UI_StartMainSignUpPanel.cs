@@ -25,10 +25,10 @@ public class UI_StartMainSignUpPanel : MonoBehaviour {
 	}
     private void Find()
     {
-        AccountInput = transform.Find("AccountInput").GetComponent<InputField>();
-        KeyInput = transform.Find("KeyInput").GetComponent<InputField>();
-        SignUpBtn = transform.Find("SignUpBtn").GetComponent<Button>();
-        eyeBtn = transform.Find("eyeBtn").GetComponent<Button>();
+        AccountInput = transform.Find("bg/AccountInput").GetComponent<InputField>();
+        KeyInput = transform.Find("bg/KeyInput").GetComponent<InputField>();
+        SignUpBtn = transform.Find("bg/SignUpBtn").GetComponent<Button>();
+        eyeBtn = transform.Find("bg/eyeBtn").GetComponent<Button>();
         eyeBtn.onClick.AddListener(eye);
         SignUpBtn.onClick.AddListener(SignUp);
 
@@ -56,6 +56,7 @@ public class UI_StartMainSignUpPanel : MonoBehaviour {
     }
     private void SignUp()
     {
+      
         if(AccountInput.text.Length>7|| AccountInput.text.Length < 3||KeyInput.text.Length>7||KeyInput.text.Length<3)
         {
             UITools.Singeton.CreatHintBox("格式不正确!");

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Equip : GoodBase
+public class Equip : Good
  {
 
      //装备的类型

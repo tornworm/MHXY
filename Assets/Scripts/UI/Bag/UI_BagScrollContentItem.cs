@@ -11,7 +11,7 @@ public class UI_BagScrollContentItem : BaseWindows
     Text goodNum;
     public int goodCount;
     //存储的物品对象
-    public GoodBase good;
+    public Good good;
     //格子是否已经有物品
     public bool isNone=true;
 
@@ -25,7 +25,7 @@ public class UI_BagScrollContentItem : BaseWindows
         }        
     }
 	//外部添加物品并更新显示方法
-    public void SetGood(GoodBase _good,int _count)
+    public void SetGood(Good _good,int _count)
     {
         //查找各个组件
         Find();
