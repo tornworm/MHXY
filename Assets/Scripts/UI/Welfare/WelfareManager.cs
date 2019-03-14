@@ -25,7 +25,8 @@ public class WelfareManager : MonoBehaviour {
     public int Panel3Count = 6;
 
     //Panel5里面的Cell数量
-    public int Panel5Count = 12;
+    public int Panel5Count = int .Parse( WelfareExcelData.Singeton.GetPanel5(2,1));
+    
 
 
 }

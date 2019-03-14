@@ -2477,6 +2477,7 @@ GameObject:
   - component: {fileID: 114714524254570636}
   - component: {fileID: 114098260649280974}
   - component: {fileID: 114260374407108838}
+  - component: {fileID: 114162700786998126}
   m_Layer: 5
   m_Name: UI_Welfare
   m_TagString: UI
@@ -3065,6 +3066,17 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1.2
   m_Text: "\u7B2C"
+--- !u!114 &114162700786998126
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1926780027923162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d730ffdf2009d942ae1b4ec32a114e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114164892374323078
 MonoBehaviour:
   m_ObjectHideFlags: 1

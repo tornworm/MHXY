@@ -15,6 +15,8 @@ public class UI_WelfarePanel5 : MonoBehaviour {
     {
         cell = transform.Find("Image/Gift/View/Content/Cell").gameObject;
     }
+
+    //生成一定数量的表格
     void Init()
     {
         for (int i = 0; i < WelfareManager.Singeton.Panel5Count; i++)
@@ -25,4 +27,5 @@ public class UI_WelfarePanel5 : MonoBehaviour {
             tmpCell.name = (i+1).ToString();
         }
     }
+
 }
