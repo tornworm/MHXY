@@ -16,6 +16,19 @@ public class GoodBase : MonoBehaviour
             mID = value;
         }
     }
+    //物品的名称
+    private string mName;
+    public string Name
+    {
+        get
+        {
+            return mName;
+        }
+        set
+        {
+            mName = value;
+        }
+    }
     //物品的价格
     private int mPrice;
     public int Price
@@ -72,6 +85,19 @@ public class GoodBase : MonoBehaviour
         set { mType = value; }
     }
 
+    //物品的星级
+    private int mStartLevel;
+    public int StartLevel
+    {
+        set
+        {
+            mStartLevel=value;
+        }
+        get
+        {
+            return mStartLevel;
+        }
+    }
     //物品描述信息
     private string mDescription;
     public string Description
