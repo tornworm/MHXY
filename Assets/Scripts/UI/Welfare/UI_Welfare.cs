@@ -112,6 +112,7 @@ public class UI_Welfare : BaseWindows
         if (e.pointerEnter.name == "tab5")
         {
             SetTab(4);
+            Debug.Log(WelfareExcelData.Singeton.GetPanel5(2, 1));
         }
         if (e.pointerEnter.name == "tab6")
         {

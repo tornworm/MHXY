@@ -298,17 +298,21 @@
     <Compile Include="Assets\Scripts\Frame\IEventListener.cs" />
     <Compile Include="Assets\Scripts\Tools\AsynchronousLoading.cs" />
     <Compile Include="Assets\Scripts\Tools\ExcelEPP.cs" />
+    <Compile Include="Assets\Scripts\Tools\RenWuExcelData.cs" />
     <Compile Include="Assets\Scripts\Tools\UITools.cs" />
-    <Compile Include="Assets\Scripts\UI\Bag\GoodBase.cs" />
-    <Compile Include="Assets\Scripts\UI\Bag\GoodEnum.cs" />
+    <Compile Include="Assets\Scripts\UI\Bag\AltaPack\SpriteData.cs" />
+    <Compile Include="Assets\Scripts\UI\Bag\Data\BagExcelData.cs" />
+    <Compile Include="Assets\Scripts\UI\Bag\Equip\Equip.cs" />
+    <Compile Include="Assets\Scripts\UI\Bag\Equip\EquipManager.cs" />
+    <Compile Include="Assets\Scripts\UI\Bag\FrameAnim\UI_BagFrameAnim.cs" />
+    <Compile Include="Assets\Scripts\UI\Bag\Good\Good.cs" />
+    <Compile Include="Assets\Scripts\UI\Bag\Good\GoodEnum.cs" />
     <Compile Include="Assets\Scripts\UI\Bag\UI_Bag.cs" />
-    <Compile Include="Assets\Scripts\UI\Bag\UI_BagFrameAnim.cs" />
     <Compile Include="Assets\Scripts\UI\Bag\UI_BagPanelOne.cs" />
     <Compile Include="Assets\Scripts\UI\Bag\UI_BagPanelTwo.cs" />
     <Compile Include="Assets\Scripts\UI\Bag\UI_BagScrollContentItem.cs" />
     <Compile Include="Assets\Scripts\UI\Capacity\UI_Capacity.cs" />
     <Compile Include="Assets\Scripts\UI\Character\UI_Character.cs" />
-    <Compile Include="Assets\Scripts\UI\Character\UI_CharacterPanel1.cs" />
     <Compile Include="Assets\Scripts\UI\CharacterProperty\UI_CharacterProperty.cs" />
     <Compile Include="Assets\Scripts\UI\Common\UI_Common1.cs" />
     <Compile Include="Assets\Scripts\UI\Common\UI_TextBox.cs" />
@@ -318,6 +322,13 @@
     <Compile Include="Assets\Scripts\UI\Pet\UI_PetPagePanel1.cs" />
     <Compile Include="Assets\Scripts\UI\Pet\UI_PetPagePanel2.cs" />
     <Compile Include="Assets\Scripts\UI\Pet\UI_PetSkillChoose.cs" />
+    <Compile Include="Assets\Scripts\UI\Renwu\CharacterLoad.cs" />
+    <Compile Include="Assets\Scripts\UI\Renwu\CharacterManager.cs" />
+    <Compile Include="Assets\Scripts\UI\Renwu\CharacterUp.cs" />
+    <Compile Include="Assets\Scripts\UI\Renwu\LV.cs" />
+    <Compile Include="Assets\Scripts\UI\Renwu\UI_CharacterPanel1.cs" />
+    <Compile Include="Assets\Scripts\UI\Renwu\UI_CharacterPanel2.cs" />
+    <Compile Include="Assets\Scripts\UI\Renwu\UI_CharacterPanel3.cs" />
     <Compile Include="Assets\Scripts\UI\Start\root.cs" />
     <Compile Include="Assets\Scripts\UI\Start\StartMainManager.cs" />
     <Compile Include="Assets\Scripts\UI\Start\StartRoot.cs" />
@@ -343,6 +354,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Plugins\link.xml" />
+    <None Include="Assets\codeandweb.com\Editor\SettingsTexturePackerImporter.txt" />
+    <None Include="Assets\codeandweb.com\Readme.txt" />
     <None Include="Assets\test\Data_Task.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
