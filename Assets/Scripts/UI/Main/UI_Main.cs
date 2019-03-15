@@ -9,12 +9,18 @@ using UnityEngine.UI;
 
 
 
-public class UI_Main : MonoBehaviour {
+public class UI_Main : BaseWindows {
 
-	
+    public  Text text;
+   
 	void Start () {
-		
+        EventController.sInstance.AddListener(this);
+        
 	}
-	
-	
+    public override void OnEventTrigger(Event _Event)
+    {
+        text.text = _Event.EventParamObj.ToString();
+    }
+
+
 }

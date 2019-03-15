@@ -33,7 +33,7 @@ SpriteAtlas:
     bindAsDefault: 1
     finalFormat: 12
     hashString: 415d67a8293090a9383c5b225469b6f5
-    totalSpriteSurfaceArea: 143208
+    totalSpriteSurfaceArea: 0
     packables:
     - {fileID: 102900000, guid: 1b09473bbd83363428c62469514525c1, type: 3}
     packedSpriteRenderDataKeys:

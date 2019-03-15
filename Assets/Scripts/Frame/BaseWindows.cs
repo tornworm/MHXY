@@ -10,14 +10,15 @@ using UnityEngine.EventSystems;
 
 
 
-public class BaseWindows : MonoBehaviour,IPointerClickHandler, IEventListener
+public class BaseWindows : MonoBehaviour, IPointerClickHandler, IEventListener
 {
 
- 
+
 
     public virtual void Init()
     {
-
+     
+      
     }
     public virtual void Enter()
     {
@@ -31,6 +32,14 @@ public class BaseWindows : MonoBehaviour,IPointerClickHandler, IEventListener
     {
 
     }
+    //public virtual void Find()
+    //{
+
+    //}
+    //public virtual void Show()
+    //{
+
+    //}
 
     public virtual void OnPointerClick(PointerEventData e)
     {
@@ -39,9 +48,9 @@ public class BaseWindows : MonoBehaviour,IPointerClickHandler, IEventListener
 
     public virtual void OnEventTrigger(Event _Event)
     {
-       
-    }
 
-  
+    }
+   
+
 }
   
