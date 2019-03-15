@@ -62,6 +62,7 @@
      <Compile Include="Assets\Scripts\Tools\ExcelEPP.cs" />
      <Compile Include="Assets\Scripts\Tools\RenWuExcelData.cs" />
      <Compile Include="Assets\Scripts\Tools\UITools.cs" />
+     <Compile Include="Assets\Scripts\Tools\WelfareExcelData.cs" />
      <Compile Include="Assets\Scripts\UI\Bag\AltaPack\SpriteData.cs" />
      <Compile Include="Assets\Scripts\UI\Bag\Data\BagExcelData.cs" />
      <Compile Include="Assets\Scripts\UI\Bag\Equip\Equip.cs" />
@@ -80,6 +81,7 @@
      <Compile Include="Assets\Scripts\UI\Common\UI_TextBox.cs" />
      <Compile Include="Assets\Scripts\UI\Loading\UI_Loading.cs" />
      <Compile Include="Assets\Scripts\UI\Main\UI_Main.cs" />
+     <Compile Include="Assets\Scripts\UI\Pet\PetExcel.cs" />
      <Compile Include="Assets\Scripts\UI\Pet\UI_PetPage.cs" />
      <Compile Include="Assets\Scripts\UI\Pet\UI_PetPagePanel1.cs" />
      <Compile Include="Assets\Scripts\UI\Pet\UI_PetPagePanel2.cs" />
