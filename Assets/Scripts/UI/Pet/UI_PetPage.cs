@@ -74,7 +74,7 @@ public class UI_PetPage : BaseWindows
         panel.Add(panel4);
 
 
-        SetTab(1);
+        SetTab(0);
     }
     public override void OnPointerClick(PointerEventData e)
     {
