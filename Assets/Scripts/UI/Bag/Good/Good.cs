@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 /*物品模型类，封装了物品的通用属性和方法，包含道具和装备两种类型*/
-public class Good : MonoBehaviour
+public class Good
 {
     //游戏对象的ID
     private int mGoodID;
