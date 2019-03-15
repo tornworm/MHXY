@@ -1682,7 +1682,9 @@ GameObject:
   - component: {fileID: 223149297286842072}
   - component: {fileID: 114748036614263802}
   - component: {fileID: 114721285299039394}
+  - component: {fileID: 114401383396656080}
   - component: {fileID: 114098554104261616}
+  - component: {fileID: 114932341238249264}
   m_Layer: 5
   m_Name: UI_Bag
   m_TagString: UI
@@ -4291,6 +4293,17 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.ScrollRect+ScrollRectEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &114401383396656080
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1742011078523402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dd4ce99826ec1e45929d76e04e944ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114402350870535500
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6302,6 +6315,17 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &114932341238249264
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1742011078523402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88996fc40b1934a4187fe30ed1c35579, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114941173259285816
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8000,8 +8024,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1742011078523402}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.6286683, y: -2.657414, z: -0.85162735}
-  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 5.6286683, y: -2.657414, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 224829656934893008}
   m_Father: {fileID: 0}

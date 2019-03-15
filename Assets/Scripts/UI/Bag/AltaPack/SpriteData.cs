@@ -5,6 +5,12 @@ using UnityEngine;
 [ExecuteInEditMode ( )]
 public class SpriteData : MonoBehaviour
 {
+    //场景切换的时候不销毁
+    void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
+
     public Sprite[ ] sprites;
 
     private Dictionary<string , int> Index = new Dictionary<string , int> ( );
@@ -24,7 +30,11 @@ public class SpriteData : MonoBehaviour
         {
             for ( int i = 0 ; i < sprites.Length ; i++ )
             {
-                Index.Add ( sprites[ i ].name , i );
+                //判断这个精灵是否为空
+                if ( sprites[i]!=null )
+                {
+                    Index.Add ( sprites[ i ].name , i );
+                }               
             }
         }
         if ( Index.TryGetValue ( spName , out indexS ) )

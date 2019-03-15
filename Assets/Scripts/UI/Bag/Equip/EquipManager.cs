@@ -7,12 +7,18 @@ public class EquipManager : MonoBehaviour
  {
     public static EquipManager Singeton;
     //存储所有装备的字典
-    Dictionary<int ,Equip> equipDict=new Dictionary<int,Equip>();
+    public Dictionary<int ,Equip> equipDict=new Dictionary<int,Equip>();
+    //存储所有的装备图标
+    SpriteData equipSpriteData;
 
     void Awake()
     {
         Singeton=this;
-        
+
+        //获取所有装备的图标
+        GameObject atlGo = Resources.Load<GameObject> ( "Atlas/atl_bagequip" );
+        equipSpriteData = Instantiate ( atlGo ).GetComponent<SpriteData> ( );
+
         //读取所有装备信息
         ReadInfo();
         Debug.Log("所有装备已加载到字典中，一共"+equipDict.Count+"件!");
@@ -34,8 +40,10 @@ public class EquipManager : MonoBehaviour
                 equip.CanUse = 1;//可使用
                 //赋值ID
                 if (j==1)
-                {
-                     equip.GoodID=int.Parse(BagExcelData.Singeton.GetWord(i,j));
+                {                   
+                     equip.GoodID=int.Parse(BagExcelData.Singeton.GetWord(i,j));                    
+                     //赋值装备的图标
+                     equip.SpriteIcon=equipSpriteData.GetSprite(equip.GoodID.ToString());
                      continue;
                 }
                 //赋值装备类型
@@ -136,16 +144,24 @@ public class EquipManager : MonoBehaviour
                     equip.Price=int.Parse(BagExcelData.Singeton.GetWord(i,j));
                     continue;
                 }
+                //跳过13和14
+                if ( j==13||j==14 )
+                {
+                    continue;
+                }
                 //赋值装备的描述
                 if ( j==15 )
                 {
                     equip.Description=BagExcelData.Singeton.GetWord(i,j);                    
                 }                
                 //将装备添加到字典中
-               equipDict.Add(equip.GoodID,equip);                
-
+                
+               equipDict.Add(equip.GoodID,equip);
+                  
             }
-        }
+            //清空equip
+            equip = null;
+        }       
     }
 
 }

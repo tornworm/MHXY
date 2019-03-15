@@ -69,6 +69,7 @@ public class UI_BagScrollContentItem : BaseWindows
             {
                 goodIcon.sprite = good.SpriteIcon;
                 goodNum.text = goodCount.ToString ( );
+                Debug.LogWarning("Num:"+goodCount);
             }           
         }
         else

@@ -48,6 +48,29 @@ public class UI_BagPanelOne : BaseWindows
         //设置默认显示界面(物品界面)
         int index = imageList.IndexOf ( goodImage );
         RightScrollPanelSet ( index );
+
+        //设置物品和任务的格子数量
+        ScrollItemCountInit(goodList,goodContent,100);
+        ScrollItemCountInit(taskList,taskContent,73);
+
+        //设置背包的物品
+        for ( int i = 0 ; i < EquipManager.Singeton.equipDict.Count ; i++ )
+        {
+            
+            Equip _equip;//定义一个装备
+            bool isContain=EquipManager.Singeton.equipDict.TryGetValue(1001+i,out _equip);//从字典中读取装备
+            if ( isContain )
+            {
+                Good _good=_equip;//封装成Good类型
+                ScrollAddGood ( goodList , _good );//往两个表中添加
+                ScrollAddGood ( taskList , _good );
+            }
+            else
+            {
+                Debug.Log("字典中不包含这个物品");
+            }
+            
+        }
     }
 
     //查找各个变量方法
@@ -64,10 +87,10 @@ public class UI_BagPanelOne : BaseWindows
         giftBtn.onClick.AddListener(OnGiftBtnClick);
         cleanBtn.onClick.AddListener(OnCleanBtnClick);
 
-        goodScroll = transform.Find ( "Right/GoodScroll/Scroll View" ).gameObject;
-        goodContent = goodScroll.transform.Find ( "Viewport/Content" );
-        taskScroll = transform.Find ( "Right/TaskScroll/Scroll View" ).gameObject;
-        taskContent = taskScroll.transform.Find ( "Viewport/Content" );
+        goodScroll = transform.Find ( "Right/GoodScroll" ).gameObject;
+        goodContent = goodScroll.transform.Find ( "Scroll View/Viewport/Content" );
+        taskScroll = transform.Find ( "Right/TaskScroll" ).gameObject;
+        taskContent = taskScroll.transform.Find ( "Scroll View/Viewport/Content" );
 
         //查找物品格子预制体
         goodPrefab=goodContent.Find("GoodClone").gameObject;
@@ -216,7 +239,7 @@ public class UI_BagPanelOne : BaseWindows
     public void ScrollAddGood ( List<GameObject> _list , Good _good , int _count = 1 )
     {
         //物品非空校验
-        if ( _good != null && _count > 0 )
+        if (  _count > 0 )
         {
             //判断这个物品原来是否已经存在了
             for ( int i = 0 ; i < _list.Count ; i++ )
@@ -266,6 +289,7 @@ public class UI_BagPanelOne : BaseWindows
             for ( int i = 0 ; i < _count ; i++ )
             {
                 GameObject go = Instantiate ( goodPrefab , _Content , false );//实例化出一个格子游戏对象
+                go.SetActive(true);//设置其状态为激活
                 _list.Add ( go );//添加到List中
             }
         }
