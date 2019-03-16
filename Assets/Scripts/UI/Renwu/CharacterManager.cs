@@ -89,7 +89,8 @@ public class CharacterManager
 
 
 	//宠物（梁静莹）
-
+      public Dictionary<int, List<int>> PetsID=new Dictionary<int,List<int>>(); 
+    //key为宠物的ID，
 
 
 	//技能（杨虎）
