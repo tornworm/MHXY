@@ -4,6 +4,22 @@ using UnityEngine;
 
 public class CharacterLoad : MonoBehaviour {
 
+    void Awake()
+    {
+        List<int> tt = new List<int>();
+        tt.Add(999);//攻击属性
+        tt.Add(4444);//防御属性
+        tt.Add(22222);//速度属性
+        List<int> ttt = new List<int>();
+        ttt.Add(999);//攻击属性
+        ttt.Add(4444);//防御属性
+        ttt.Add(22222);//速度属性
+        CharacterManager.Singleton.PetsID.Add(1001, tt);
+        CharacterManager.Singleton.PetsID.Add(1002, ttt);
+
+
+       
+    }
 
 	void Start () {
 
@@ -72,7 +88,7 @@ public class CharacterLoad : MonoBehaviour {
 
 
 		//宠物（梁静莹）
-
+       
 
 
 		//技能（杨虎）

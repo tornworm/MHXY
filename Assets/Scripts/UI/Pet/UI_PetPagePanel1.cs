@@ -93,6 +93,7 @@ public class UI_PetPagePanel1 : BaseWindows
         Show();
         PanelAndClickImg(0);
         Choose(0);
+        clonePets();
 	}
 
 	void Find()
@@ -271,6 +272,23 @@ public class UI_PetPagePanel1 : BaseWindows
                 ChooseImgList[i].SetActive(false);
             }
         }
+    }
+    private void clonePets()
+    {
+        //foreach (var pet in CharacterManager.Singleton.PetsID)
+        // {
+        //      GameObject tmpCell = Instantiate(PetCell);
+        //      tmpCell.name = pet.ToString();
+        // }
+        for (int i = 0; i < CharacterManager.Singleton.PetsID.Count; i++)
+        {
+            for (int j = 0; j < CharacterManager.Singleton.PetsID[1001 + i].Count; j++)
+            {
+                Debug.Log(CharacterManager.Singleton.PetsID[1001 + i][j]);
+            }
+        }
+
+        
     }
 
 }

@@ -16,7 +16,8 @@ public class UI_PetPagePanel2 : BaseWindows
     private GameObject PanelJionPet;//合宠面板
     private GameObject PanelLearn;//学技能面板
     private GameObject CherishPet;//珍兽合宠面板
-    public GameObject PanelChangePet;//选择宠物面板
+    private GameObject PanelChangePetLeft;//选择宠物面板左
+    private GameObject PanelChangePetRight;//选择宠物面板右
 
     //通用面板
     private Image PetImg;//宠物图片
@@ -103,7 +104,7 @@ public class UI_PetPagePanel2 : BaseWindows
     private Text CherishLifeNumLeft;//寿命数值
     private GameObject CherishSkillCellLeft;//宠物技能栏
 
-    //选择宠物面板
+    //选择宠物面板左
     private Text PetName;//宠物名字
     private Slider ChangePetAtkSlider;//攻击资质滑动条
     private Text ChangePetAtkNum;//攻击资质数值
@@ -122,6 +123,31 @@ public class UI_PetPagePanel2 : BaseWindows
     private GameObject ChangePetcell;//宠物技能格子
     private Image BackBtn;//关闭选择面板按钮
 
+    //选择宠物面板右
+    private Text PetNameRight;//宠物名字
+    private Slider ChangePetAtkSliderRight;//攻击资质滑动条
+    private Text ChangePetAtkNumRight;//攻击资质数值
+    private Slider ChangePetDefSliderRight;//防御资质滑动条
+    private Text ChangePetDefNumRight;//防御资质数值
+    private Slider ChangePetBodySliderRight;//体力资质滑动条
+    private Text ChangePetBodyNumRight;//体力资质数值
+    private Slider ChangePetMpAptSliderRight;//法力资质滑动条
+    private Text ChangePetMpAptNumRight;//法力资质数值
+    private Slider ChangePetSpeedAptSliderRight;//速度资质滑动条
+    private Text ChangePetSpeedAptNumRight;//速度资质数值
+    private Text ChangePetGrowNumRight;//宠物成长数值
+    private Text ChangePetLifeNumRight;//宠物寿命数值
+    private GameObject ChangePetSkillcellRight;//宠物技能格子
+    private Button ChooseBtnRight;//选择按钮
+    private GameObject ChangePetcellRight;//宠物技能格子
+    private Image BackBtnRight;//关闭选择面板按钮
+
+    //选择技能书面板
+    private GameObject ChooseBook;//选择技能书面板
+    private GameObject BookCell;//宠物技能格子
+    private Text BookName;//技能书名字
+    private Image BackBook;//关闭选择技能书
+
     //面板表
     List<GameObject> PanelList = new List<GameObject>();
     //点击图片切换表
@@ -132,11 +158,18 @@ public class UI_PetPagePanel2 : BaseWindows
         Find();
         Show();
         PanelChange(0);
-        PetChange(0);
+        PanelChangePetLeft.SetActive(false);
+        PanelChangePetRight.SetActive(false);
 	}
 
     void Find()
     {
+        //选择技能书面板
+        ChooseBook = transform.Find("LearnShow/ChooseBook").gameObject;
+        BookCell = transform.Find("LearnShow/ChooseBook/Scroll View/Viewport/Content/AddBook/BookCell").gameObject;
+        BookName = transform.Find("LearnShow/ChooseBook/Scroll View/Viewport/Content/AddBook/BookName").GetComponent<Text>();
+        BackBook = transform.Find("LearnShow/ChooseBook/BackBook").GetComponent<Image>();
+
         //四个选项的点击切换
         UpDateClick = transform.Find("HeadBtn/UpDate/ClickImg").gameObject;
         JoinPetClick = transform.Find("HeadBtn/JoinPet/ClickImg").gameObject;
@@ -148,7 +181,8 @@ public class UI_PetPagePanel2 : BaseWindows
         PanelJionPet = transform.Find("JionPetShow").gameObject;
         PanelLearn = transform.Find("LearnShow").gameObject;
         CherishPet = transform.Find("CherishPetShow").gameObject;
-        PanelChangePet = transform.Find("JoinPetChange").gameObject;
+        PanelChangePetLeft = transform.Find("JoinPetChangeLeft").gameObject;
+        PanelChangePetRight = transform.Find("JoinPetChangeRight").gameObject;
 
         //通用面板
         PetImg = transform.Find("PetImgBg/PetImg").GetComponent<Image>();
@@ -183,8 +217,8 @@ public class UI_PetPagePanel2 : BaseWindows
         MtlBtn = transform.Find("UpDateShow/MtlBtn").GetComponent<Button>();
 
         //合宠面板左
-        PetAddImgLeft = transform.Find("JionPetShow/JionPetLeft/AddGrid").GetComponent<Image>();
-        PetImgLeft = transform.Find("JionPetShow/JionPetLeft/AddGrid/PetImg").GetComponent<Image>();
+        PetAddImgLeft = transform.Find("JionPetShow/JionPetLeft/AddGridLeft").GetComponent<Image>();
+        PetImgLeft = transform.Find("JionPetShow/JionPetLeft/AddGridLeft/PetImg").GetComponent<Image>();
         AtkNumLeft = transform.Find("JionPetShow/JionPetLeft/AtkApt/AtkNum").GetComponent<Text>();
         DefNumLeft = transform.Find("JionPetShow/JionPetLeft/DefApt/DefNum").GetComponent<Text>();
         BodyNumLeft = transform.Find("JionPetShow/JionPetLeft/BodyApt/BodyNum").GetComponent<Text>();
@@ -231,9 +265,9 @@ public class UI_PetPagePanel2 : BaseWindows
         //珍兽合宠左侧面板
         CompoundBtn = transform.Find("CherishPetShow/CherishPetLeft/CompoundBtn").GetComponent<Button>();
 
-        AddGridLeft = transform.Find("CherishPetShow/CherishPetRight/AddGrid").GetComponent<Image>();
-        PetAddImgLeft = transform.Find("CherishPetShow/CherishPetRight/AddGrid/PetImg").GetComponent<Image>();
-        NamePetLeft = transform.Find("CherishPetShow/CherishPetRight/AddGrid/Name").GetComponent<Text>();
+        AddGridLeft = transform.Find("CherishPetShow/CherishPetLeft/AddGridLeft").GetComponent<Image>();
+        PetAddImgLeft = transform.Find("CherishPetShow/CherishPetLeft/AddGridLeft/PetImg").GetComponent<Image>();
+        NamePetLeft = transform.Find("CherishPetShow/CherishPetLeft/AddGridLeft/Name").GetComponent<Text>();
 
         CherishAtkNumLeft = transform.Find("CherishPetShow/CherishPetLeft/AtkApt/AtkNum").GetComponent<Text>();
         CherishDefNumLeft = transform.Find("CherishPetShow/CherishPetLeft/DefApt/DefNum").GetComponent<Text>();
@@ -244,31 +278,57 @@ public class UI_PetPagePanel2 : BaseWindows
         CherishLifeNumLeft = transform.Find("CherishPetShow/CherishPetLeft/Life/LifeNum").GetComponent<Text>();
         CherishSkillCellLeft = transform.Find("CherishPetShow/CherishPetLeft/SkillScrollView/Viewport/Content/SkillCell").gameObject;
 
-        //选择宠物面板
-        PetName = transform.Find("JoinPetChange/ChangeBg/UpImg/PetName").GetComponent<Text>();
+        //选择宠物面板左
+        PetName = transform.Find("JoinPetChangeLeft/ChangeBg/UpImg/PetName").GetComponent<Text>();
 
-        ChangePetAtkSlider = transform.Find("JoinPetChange/ChangeBg/UpImg/AtkApt/AtkSlider").GetComponent<Slider>();
-        ChangePetAtkNum = transform.Find("JoinPetChange/ChangeBg/UpImg/AtkApt/AtkNum").GetComponent<Text>();
+        ChangePetAtkSlider = transform.Find("JoinPetChangeLeft/ChangeBg/UpImg/AtkApt/AtkSlider").GetComponent<Slider>();
+        ChangePetAtkNum = transform.Find("JoinPetChangeLeft/ChangeBg/UpImg/AtkApt/AtkNum").GetComponent<Text>();
 
-        ChangePetDefSlider = transform.Find("JoinPetChange/ChangeBg/UpImg/DefApt/DefSlider").GetComponent<Slider>();
-        ChangePetDefNum = transform.Find("JoinPetChange/ChangeBg/UpImg/DefApt/DefNum").GetComponent<Text>();
+        ChangePetDefSlider = transform.Find("JoinPetChangeLeft/ChangeBg/UpImg/DefApt/DefSlider").GetComponent<Slider>();
+        ChangePetDefNum = transform.Find("JoinPetChangeLeft/ChangeBg/UpImg/DefApt/DefNum").GetComponent<Text>();
 
-        ChangePetBodySlider = transform.Find("JoinPetChange/ChangeBg/UpImg/BodyApt/BodySlider").GetComponent<Slider>();
-        ChangePetBodyNum = transform.Find("JoinPetChange/ChangeBg/UpImg/BodyApt/BodyNum").GetComponent<Text>();
+        ChangePetBodySlider = transform.Find("JoinPetChangeLeft/ChangeBg/UpImg/BodyApt/BodySlider").GetComponent<Slider>();
+        ChangePetBodyNum = transform.Find("JoinPetChangeLeft/ChangeBg/UpImg/BodyApt/BodyNum").GetComponent<Text>();
 
-        ChangePetMpAptSlider = transform.Find("JoinPetChange/ChangeBg/UpImg/MpApt/MpSlider").GetComponent<Slider>();
-        ChangePetMpAptNum = transform.Find("JoinPetChange/ChangeBg/UpImg/MpApt/MpNum").GetComponent<Text>();
+        ChangePetMpAptSlider = transform.Find("JoinPetChangeLeft/ChangeBg/UpImg/MpApt/MpSlider").GetComponent<Slider>();
+        ChangePetMpAptNum = transform.Find("JoinPetChangeLeft/ChangeBg/UpImg/MpApt/MpNum").GetComponent<Text>();
 
-        ChangePetSpeedAptSlider = transform.Find("JoinPetChange/ChangeBg/UpImg/SpeedApt/SpeedSlider").GetComponent<Slider>();
-        ChangePetSpeedAptNum = transform.Find("JoinPetChange/ChangeBg/UpImg/SpeedApt/SpeedNum").GetComponent<Text>();
+        ChangePetSpeedAptSlider = transform.Find("JoinPetChangeLeft/ChangeBg/UpImg/SpeedApt/SpeedSlider").GetComponent<Slider>();
+        ChangePetSpeedAptNum = transform.Find("JoinPetChangeLeft/ChangeBg/UpImg/SpeedApt/SpeedNum").GetComponent<Text>();
 
-        ChangePetGrowNum = transform.Find("JoinPetChange/ChangeBg/UpImg/Grow/GrowNum").GetComponent<Text>();
-        ChangePetLifeNum = transform.Find("JoinPetChange/ChangeBg/UpImg/Life/LifeNum").GetComponent<Text>();
+        ChangePetGrowNum = transform.Find("JoinPetChangeLeft/ChangeBg/UpImg/Grow/GrowNum").GetComponent<Text>();
+        ChangePetLifeNum = transform.Find("JoinPetChangeLeft/ChangeBg/UpImg/Life/LifeNum").GetComponent<Text>();
 
-        ChangePetSkillcell = transform.Find("JoinPetChange/ChangeBg/UpImg/SkillScrollView/Viewport/Content/SkillCell").gameObject;
-        ChooseBtn = transform.Find("JoinPetChange/ChangeBg/Button").GetComponent<Button>();
-        ChangePetcell = transform.Find("JoinPetChange/ChangeBg/PetScrollView/Viewport/Content/PetCell").gameObject;
-        BackBtn = transform.Find("JoinPetChange/BackBtn").GetComponent<Image>();
+        ChangePetSkillcell = transform.Find("JoinPetChangeLeft/ChangeBg/UpImg/SkillScrollView/Viewport/Content/SkillCell").gameObject;
+        ChooseBtn = transform.Find("JoinPetChangeLeft/ChangeBg/Button").GetComponent<Button>();
+        ChangePetcell = transform.Find("JoinPetChangeLeft/ChangeBg/PetScrollView/Viewport/Content/PetCell").gameObject;
+        BackBtn = transform.Find("JoinPetChangeLeft/BackBtn").GetComponent<Image>();
+
+        //选择宠物面板右
+        PetNameRight = transform.Find("JoinPetChangeRight/ChangeBg/UpImg/PetName").GetComponent<Text>();
+
+        ChangePetAtkSliderRight = transform.Find("JoinPetChangeRight/ChangeBg/UpImg/AtkApt/AtkSlider").GetComponent<Slider>();
+        ChangePetAtkNumRight = transform.Find("JoinPetChangeRight/ChangeBg/UpImg/AtkApt/AtkNum").GetComponent<Text>();
+
+        ChangePetDefSliderRight = transform.Find("JoinPetChangeRight/ChangeBg/UpImg/DefApt/DefSlider").GetComponent<Slider>();
+        ChangePetDefNumRight = transform.Find("JoinPetChangeRight/ChangeBg/UpImg/DefApt/DefNum").GetComponent<Text>();
+
+        ChangePetBodySliderRight = transform.Find("JoinPetChangeRight/ChangeBg/UpImg/BodyApt/BodySlider").GetComponent<Slider>();
+        ChangePetBodyNumRight = transform.Find("JoinPetChangeRight/ChangeBg/UpImg/BodyApt/BodyNum").GetComponent<Text>();
+
+        ChangePetMpAptSliderRight = transform.Find("JoinPetChangeRight/ChangeBg/UpImg/MpApt/MpSlider").GetComponent<Slider>();
+        ChangePetMpAptNumRight = transform.Find("JoinPetChangeRight/ChangeBg/UpImg/MpApt/MpNum").GetComponent<Text>();
+
+        ChangePetSpeedAptSliderRight = transform.Find("JoinPetChangeRight/ChangeBg/UpImg/SpeedApt/SpeedSlider").GetComponent<Slider>();
+        ChangePetSpeedAptNumRight = transform.Find("JoinPetChangeRight/ChangeBg/UpImg/SpeedApt/SpeedNum").GetComponent<Text>();
+
+        ChangePetGrowNumRight = transform.Find("JoinPetChangeRight/ChangeBg/UpImg/Grow/GrowNum").GetComponent<Text>();
+        ChangePetLifeNumRight = transform.Find("JoinPetChangeRight/ChangeBg/UpImg/Life/LifeNum").GetComponent<Text>();
+
+        ChangePetSkillcellRight = transform.Find("JoinPetChangeRight/ChangeBg/UpImg/SkillScrollView/Viewport/Content/SkillCell").gameObject;
+        ChooseBtnRight = transform.Find("JoinPetChangeRight/ChangeBg/Button").GetComponent<Button>();
+        ChangePetcellRight = transform.Find("JoinPetChangeRight/ChangeBg/PetScrollView/Viewport/Content/PetCell").gameObject;
+        BackBtnRight = transform.Find("JoinPetChangeRight/BackBtnRight").GetComponent<Image>();
     }
 
     void Show()
@@ -278,7 +338,6 @@ public class UI_PetPagePanel2 : BaseWindows
         PanelList.Add(PanelJionPet);
         PanelList.Add(PanelLearn);
         PanelList.Add(CherishPet);
-        PanelList.Add(PanelChangePet);
 
         ClickImgList.Clear();
         ClickImgList.Add(UpDateClick);
@@ -292,60 +351,65 @@ public class UI_PetPagePanel2 : BaseWindows
         if (e.pointerEnter.name == "UpDate")
         {
             PanelChange(0);
-            PetChange(0);
         }
         else if (e.pointerEnter.name == "JoinPet")
         {
             PanelChange(1);
-            PetChange(1);
         }
         else if (e.pointerEnter.name == "Learn")
         {
             PanelChange(2);
-            PetChange(2);
+            ChooseBook.SetActive(false);
         }
         else if (e.pointerEnter.name == "CherishPet")
         {
             PanelChange(3);
-            PetChange(3);
+        }
+        else if (e.pointerEnter.name == "AddGridLeft")
+        {
+            PanelChangePetLeft.SetActive(true);
         }
         else if (e.pointerEnter.name == "AddGrid")
+       {
+           PanelChangePetRight.SetActive(true);
+       }
+
+        if (e.pointerEnter.name == "BackBtn")
         {
-            PanelChange(4);
+            PanelChangePetLeft.SetActive(false);
+        }
+        else if (e.pointerEnter.name == "BackBtnRight")
+        {
+            PanelChangePetRight.SetActive(false);
+        }
+        else if (e.pointerEnter.name == "BackBook")
+        {
+            ChooseBook.SetActive(false);
         }
 
-        
+        if (e.pointerEnter.name == "Skill01")
+        {
+            ChooseBook.SetActive(true);
+        }
 
     }
 
     private void PanelChange(int id)
     {
-        for (int i = 0; i < 5; i++)
-        {
-            if (i == id)
-            {
-                PanelList[i].SetActive(true);
-            }
-            else
-            {
-                PanelList[i].SetActive(false);
-            }
-        }
-    }
-
-    private void PetChange(int id)
-    {
         for (int i = 0; i < 4; i++)
         {
             if (i == id)
             {
+                PanelList[i].SetActive(true);
                 ClickImgList[i].SetActive(true);
             }
             else
             {
+                PanelList[i].SetActive(false);
                 ClickImgList[i].SetActive(false);
             }
         }
     }
+
 
 }
