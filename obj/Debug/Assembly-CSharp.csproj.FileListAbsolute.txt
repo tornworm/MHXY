@@ -48,3 +48,6 @@ E:\gitproject\MHXY\Temp\bin\Debug\UnityEngine.HoloLens.xml
 E:\gitproject\MHXY\Temp\bin\Debug\UnityEngine.SpatialTracking.xml
 E:\gitproject\MHXY\obj\Debug\Assembly-CSharp.dll
 E:\gitproject\MHXY\obj\Debug\Assembly-CSharp.pdb
+E:\GitHubProject\trunk\MHXY\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
+E:\GitHubProject\trunk\MHXY\obj\Debug\Assembly-CSharp.dll
+E:\GitHubProject\trunk\MHXY\obj\Debug\Assembly-CSharp.pdb

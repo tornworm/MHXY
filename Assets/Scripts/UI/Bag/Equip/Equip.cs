@@ -114,4 +114,19 @@ public class Equip : Good
              mAddMp = value;
          }
      }
+
+     //装备是否已经装备上了
+     private int mIsEquip;
+     public int IsEquip
+     {
+        get
+         {
+            return mIsEquip;
+         }
+         set
+         {
+            mIsEquip=value;
+         }
+     }
+
 }

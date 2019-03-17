@@ -24,5 +24,6 @@ public enum EquipType
 }
 
 public class GoodEnum : MonoBehaviour 
-{
+{ 
+   
 }

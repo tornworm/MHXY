@@ -10,11 +10,14 @@ public class EquipManager : MonoBehaviour
     public Dictionary<int ,Equip> equipDict=new Dictionary<int,Equip>();
     //存储所有的装备图标
     SpriteData equipSpriteData;
+    //背包装备信息Excel操作工具类
+    BagExcelData equipExcelData;
 
     void Awake()
     {
         Singeton=this;
-
+        //初始化装备Excel操作工具类
+        equipExcelData=new BagExcelData();
         //获取所有装备的图标
         GameObject atlGo = Resources.Load<GameObject> ( "Atlas/atl_bagequip" );
         equipSpriteData = Instantiate ( atlGo ).GetComponent<SpriteData> ( );
@@ -52,7 +55,7 @@ public class EquipManager : MonoBehaviour
                     switch (BagExcelData.Singeton.GetWord(i,j) )
                     {
                         case "腰带":
-                            equip.EquipType=EquipType.ET_BELT;
+                        equip.EquipType=EquipType.ET_BELT;
                         break;
                         case "铠甲":
                         equip.EquipType = EquipType.ET_CLOTHES;
@@ -144,9 +147,15 @@ public class EquipManager : MonoBehaviour
                     equip.Price=int.Parse(BagExcelData.Singeton.GetWord(i,j));
                     continue;
                 }
-                //跳过13和14
-                if ( j==13||j==14 )
+                //跳过13
+                if ( j==13 )
                 {
+                    continue;
+                }
+                //赋值装备是否已经装备上了
+                if ( j==14 )
+                {
+                    equip.IsEquip=int.Parse(BagExcelData.Singeton.GetWord(i,j));
                     continue;
                 }
                 //赋值装备的描述

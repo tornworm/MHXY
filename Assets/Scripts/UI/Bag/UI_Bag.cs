@@ -81,7 +81,7 @@ public class UI_Bag : BaseWindows
         //Debug.Log ( e.pointerEnter.name );
         if ( e.pointerEnter.name == "tab1" )
         {
-            SetTab ( 0 );
+            SetTab ( 0 );            
         }
         else if ( e.pointerEnter.name == "tab2" )
         {
@@ -106,6 +106,7 @@ public class UI_Bag : BaseWindows
 
                 tabImg[ i ].SetActive ( true );
                 panel[ i ].SetActive ( true );
+                title.text=tabTxt[i].text.Replace('\n',' ');
             }
             else
             {

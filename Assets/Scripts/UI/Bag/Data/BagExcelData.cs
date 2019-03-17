@@ -4,19 +4,22 @@ using UnityEngine.UI;
 using System.IO;
 using OfficeOpenXml;
 
-public class BagExcelData : MonoBehaviour 
+internal class BagExcelData  
 {
 
-    public static BagExcelData Singeton;//单例
+    public static BagExcelData Singeton=null;//单例
     ExcelPackage excel;
     //装备表
     ExcelWorksheet EquipSheet;
     FileInfo file;
     string filePath;
 
-    void Awake ( )
+    public  BagExcelData ( )
     {
-        Singeton = this;
+        if ( Singeton==null )
+        {
+            Singeton = this;
+        }
         filePath = Application.dataPath + "/StreamingAssets/Data_Bag.xlsx";
         file = new FileInfo ( filePath );
         excel = new ExcelPackage ( file );

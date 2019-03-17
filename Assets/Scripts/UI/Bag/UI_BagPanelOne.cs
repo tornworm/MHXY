@@ -36,10 +36,19 @@ public class UI_BagPanelOne : BaseWindows
     Text characterScore;
     //八个装备栏Image
     Image equip1 , equip2 , equip3 , equip4 , equip5 , equip6 , equip7 , equip8;
-    List<GameObject> equipList;
+    List<GameObject> equipGoList;
     //玩家显示的Image
     Image characterImage;
+    //左侧装备点击界面
+    GameObject equipShowPanel;
+    //所有准备格子的装备
+    List<UI_BagEquipItem> equipItemList;
+    
     #endregion
+
+    /***********公共变量************/
+    IEnumerator enumerator;//开启鼠标选中某个格子后显示被选中的图标，携程方法
+    GameObject showGo;//当期被鼠标选中的对象
 
     void Start ( )
     {
@@ -71,6 +80,16 @@ public class UI_BagPanelOne : BaseWindows
             }
             
         }
+
+        //设置装备
+        for ( int i = 0 ; i < 8 ; i++ )
+        {
+            int equipID=Random.Range(1001,1073);
+            Equip equip;
+            EquipManager.Singeton.equipDict.TryGetValue(equipID,out equip);
+            equipItemList[i].SetEquip(equip);
+        }
+
     }
 
     //查找各个变量方法
@@ -126,6 +145,9 @@ public class UI_BagPanelOne : BaseWindows
         clothTimeBtn.onClick.RemoveAllListeners();
         goldAddBtn.onClick.RemoveAllListeners();
         silverAddBtn.onClick.RemoveAllListeners();
+        //装备点击显示界面
+        equipShowPanel=transform.Find("Left/EquipShow").gameObject;
+        equipShowPanel.AddComponent<UI_BagEquipShow>();
 
         clothBtn.onClick.AddListener ( OnClothBtnClick );
         clothTimeBtn.onClick.AddListener ( OnClothTimeBtnClick );
@@ -145,15 +167,17 @@ public class UI_BagPanelOne : BaseWindows
         equip6 = transform.Find ( "Left/Equip6" ).GetComponent<Image> ( );
         equip7 = transform.Find ( "Left/Equip7" ).GetComponent<Image> ( );
         equip8 = transform.Find ( "Left/Equip8" ).GetComponent<Image> ( );
-        equipList=new List<GameObject>();
-        equipList.Add ( equip1.gameObject );
-        equipList.Add ( equip2.gameObject );
-        equipList.Add ( equip3.gameObject );
-        equipList.Add ( equip4.gameObject );
-        equipList.Add ( equip5.gameObject );
-        equipList.Add ( equip6.gameObject );
-        equipList.Add ( equip7.gameObject );
-        equipList.Add ( equip8.gameObject );
+        equipGoList=new List<GameObject>();
+        equipItemList=new List<UI_BagEquipItem>();
+        EquipCellInit(equip1.gameObject);
+        EquipCellInit ( equip2.gameObject );
+        EquipCellInit ( equip3.gameObject );
+        EquipCellInit ( equip4.gameObject );
+        EquipCellInit ( equip5.gameObject );
+        EquipCellInit ( equip6.gameObject );
+        EquipCellInit ( equip7.gameObject );
+        EquipCellInit ( equip8.gameObject );
+       
 
         characterImage = transform.Find ( "Left/Character" ).GetComponent<Image> ( );
 
@@ -187,11 +211,12 @@ public class UI_BagPanelOne : BaseWindows
                 ShowSelectImageInScroll ( taskList , e.pointerEnter );
             }
         }
-
+       
         //根据Equip面板选中的Equip显示SelectImage
         if ( e.pointerEnter.name.Contains("Equip") )
         {
-           ShowSelectImageInList(equipList,e.pointerEnter);
+           ShowSelectImageInList(equipGoList,e.pointerEnter);
+           equipShowPanel.SetActive ( !equipShowPanel .activeInHierarchy);
         }
 
 
@@ -245,18 +270,7 @@ public class UI_BagPanelOne : BaseWindows
             for ( int i = 0 ; i < _list.Count ; i++ )
             {
                 UI_BagScrollContentItem item = _list[ i ].GetComponent<UI_BagScrollContentItem> ( );
-                if ( item.good.GoodID == _good.GoodID )
-                {
-                    item.SetGood ( _good , ( item.goodCount + _count ) );
-                    //结束方法
-                    return;
-                }
-            }
-            //背包里无相同物品，添加物品到新的格子
-            //判断是否还有空格子
-            for ( int i = 0 ; i < _list.Count ; i++ )
-            {
-                UI_BagScrollContentItem item = _list[ i ].GetComponent<UI_BagScrollContentItem> ( );
+                //判断是否还有空格子
                 if ( item.isNone )
                 {
                     //有空格子，添加物品到格子中
@@ -264,7 +278,15 @@ public class UI_BagPanelOne : BaseWindows
                     //结束方法
                     return;
                 }
-            }
+                //如果格子已经有物品了，判断是否为同一物品
+                if ( item.good.GoodID == _good.GoodID )
+                {
+                    item.SetGood ( _good , ( item.goodCount + _count ) );
+                    //结束方法
+                    return;
+                }
+            }         
+           
             //没有空格子了
             Debug.Log ( "您的背包已经满了" );
         }
@@ -377,8 +399,23 @@ public class UI_BagPanelOne : BaseWindows
     {
         Debug.Log("银子++");
     }
-
-    //装备点击
+    //对一个装备格子初始化
+    void EquipCellInit(GameObject _EquipGo)
+    {
+       _EquipGo.AddComponent<UI_BagEquipItem>();//加上装备格子脚本
+       equipItemList.Add(_EquipGo.GetComponent<UI_BagEquipItem>());//添加到装备格子对象列表中
+       _EquipGo.GetComponent<UI_BagEquipItem>().SetEquip(null);//不显示任何装备
+       equipGoList.Add(_EquipGo);//添加到装备游戏对象列表中       
+    }
+    //卸下装备方法
+    void DropEquip(GameObject _equipx)
+    {
+        UI_BagEquipItem item= _equipx.GetComponent<UI_BagEquipItem>();
+        if ( item!=null )
+        {
+            item.DropEquip();
+        }
+    }
 
     #endregion
 
@@ -403,14 +440,28 @@ public class UI_BagPanelOne : BaseWindows
         for ( int i = 0 ; i < _list.Count ; i++ )
         {
             UI_BagScrollContentItem item = _list[ i ].GetComponent<UI_BagScrollContentItem> ( );
-            if (_list[i].name==_selectGo.name )
+            if (_list[i]==_selectGo )
             {
+                Debug.Log ( "_selectGo:" + _selectGo.name );
                 //显示被鼠标选中了
                 item.ShowSelectImage(true);
                 //开启自动隐藏SelectImage的协程
                 //先关闭其他协程
-                StopAllCoroutines();
-                StartCoroutine(HideSelect(item.transform));
+                if ( enumerator!=null )
+                {
+                    StopCoroutine(enumerator);
+                    //showGo.GetComponent<UI_BagScrollContentItem>().ShowSelectImage(false);
+                    if ( showGo!=_selectGo )
+                    {
+                        //如果选择的不是上一次点击的物品，就立刻隐藏上一次的显示
+                        ShowSelectImage ( showGo.transform , false );
+                    }                   
+                    enumerator=null;
+                    showGo=null;
+                }
+                enumerator=HideSelect ( item.transform ) ;//赋值协程
+                showGo=item.gameObject;//赋值当前显示的格子
+                StartCoroutine ( enumerator );//开启协程
             }
             else
             {
@@ -418,7 +469,7 @@ public class UI_BagPanelOne : BaseWindows
                 item.ShowSelectImage(false);
             }
         }
-
+      
     }
     //设置List中显示一个物品被选中
     void ShowSelectImageInList ( List<GameObject> _list , GameObject _selectGo )
@@ -437,8 +488,21 @@ public class UI_BagPanelOne : BaseWindows
                 ShowSelectImage(_list[i].transform,true);
                 //开启自动隐藏SelectImage的协程
                 //先关闭其他协程
-                StopAllCoroutines ( );
-                StartCoroutine ( HideSelect ( _list[ i ].transform.transform ) );
+                //先关闭其他协程
+                if ( enumerator != null )
+                {
+                    StopCoroutine ( enumerator );
+                    //如果上一次显示的物品不是这一次要显示的物体，立刻隐藏上一次显示的物体
+                    if ( showGo!=_selectGo )
+                    {
+                        ShowSelectImage ( showGo.transform , false );
+                    } 
+                    enumerator = null;
+                    showGo = null;
+                }
+                enumerator = HideSelect ( _list[ i ].transform );//赋值协程
+                showGo = _list[ i ];//赋值当前显示的格子
+                StartCoroutine ( enumerator );//开启协程              
             }
             else
             {

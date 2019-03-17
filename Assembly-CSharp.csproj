@@ -67,6 +67,8 @@
      <Compile Include="Assets\Scripts\UI\Bag\Data\BagExcelData.cs" />
      <Compile Include="Assets\Scripts\UI\Bag\Equip\Equip.cs" />
      <Compile Include="Assets\Scripts\UI\Bag\Equip\EquipManager.cs" />
+     <Compile Include="Assets\Scripts\UI\Bag\Equip\UI_BagEquipItem.cs" />
+     <Compile Include="Assets\Scripts\UI\Bag\Equip\UI_BagEquipShow.cs" />
      <Compile Include="Assets\Scripts\UI\Bag\FrameAnim\UI_BagFrameAnim.cs" />
      <Compile Include="Assets\Scripts\UI\Bag\Good\Good.cs" />
      <Compile Include="Assets\Scripts\UI\Bag\Good\GoodEnum.cs" />
