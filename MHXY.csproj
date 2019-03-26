@@ -300,6 +300,7 @@
     <Compile Include="Assets\Scripts\Tools\ExcelEPP.cs" />
     <Compile Include="Assets\Scripts\Tools\RenWuExcelData.cs" />
     <Compile Include="Assets\Scripts\Tools\UITools.cs" />
+    <Compile Include="Assets\Scripts\Tools\WelfareExcelData.cs" />
     <Compile Include="Assets\Scripts\UI\Bag\AltaPack\SpriteData.cs" />
     <Compile Include="Assets\Scripts\UI\Bag\Data\BagExcelData.cs" />
     <Compile Include="Assets\Scripts\UI\Bag\Equip\Equip.cs" />

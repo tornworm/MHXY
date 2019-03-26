@@ -10,23 +10,23 @@ public class UI_CharacterPanel2 : BaseWindows {
 
     //面板左侧
 
-    public Text hptext;//血气存储
-	public Text maxhptext;//最大血气存储
-    public Text mptext;//魔法存储
-	public Text maxmptext;//最大魔法存储
+    private Text hptext;//血气存储
+    private Text maxhptext;//最大血气存储
+    private Text mptext;//魔法存储
+    private Text maxmptext;//最大魔法存储
 
     //右侧面板
 
-    public Text menpaitext;//门派
-    public Text bangpaitext;//帮派
-    public Text gongxian;//贡献
-    public Text gongxianbp;//帮派贡献
-    public Text jieri;//节日
-    public Text zuoqi;//坐骑
-    public Text wuyun;//武勋
-    public Text xiayi;//侠义
-    public Text liangshi;//良师
-    public Text qita;//其他积分
+    private Text menpaitext;//门派
+    private Text bangpaitext;//帮派
+    private Text gongxian;//贡献
+    private Text gongxianbp;//帮派贡献
+    private Text jieri;//节日
+    private Text zuoqi;//坐骑
+    private Text wuyun;//武勋
+    private Text xiayi;//侠义
+    private Text liangshi;//良师
+    private Text qita;//其他积分
 
 	void Start () {
 
@@ -38,11 +38,11 @@ public class UI_CharacterPanel2 : BaseWindows {
 	void Update () {
 
 	}
-	public void Show() {
+    private void Show() {
 		// characterID.text=
 		SetTab(0);
 	}
-	public void Find() 
+    private void Find() 
 	{
 		hptext = transform.Find ("left/qixue/chubei1/hp/hptext").GetComponent<Text> ();
 		maxhptext = transform.Find ("left/qixue/chubei1/hp/maxhptext").GetComponent<Text> ();
@@ -59,7 +59,7 @@ public class UI_CharacterPanel2 : BaseWindows {
 		liangshi = transform.Find ("light/liangshi").GetComponent<Text> ();
 		qita = transform.Find ("light/qita").GetComponent<Text> ();
 	}
-	public void SetTab(int id)
+    private void SetTab(int id)
 	{
 		
 	}

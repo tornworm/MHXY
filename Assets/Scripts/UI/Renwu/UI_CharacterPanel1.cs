@@ -74,7 +74,7 @@ public class UI_CharacterPanel1 : BaseWindows {
 	}
 
 
-	public void Show() {
+    private void Show() {
        // characterID.text=
         
 		characterLevel.text = CharacterManager.Singleton.Lv.ToString();
@@ -88,7 +88,7 @@ public class UI_CharacterPanel1 : BaseWindows {
 		maxexptext.text = "/"+CharacterManager.Singleton.MaxExp.ToString ();
 
     }
-	public void Find() {
+    private void Find() {
         lowTab = transform.Find("right/jichu/jichuImage").gameObject;
         highTab = transform.Find("right/gaoji/gaojiImage").gameObject;
        lowPanel=  transform.Find("right/jichu/kuang").gameObject;
@@ -138,7 +138,7 @@ public class UI_CharacterPanel1 : BaseWindows {
         }
 
     }
-	public void SetTab(int id) {
+    private void SetTab(int id) {
         for (int i = 0; i < 2; i++) {
 
             if (i == id) {
